@@ -89,6 +89,8 @@ with open('model.pkl', 'wb') as model_file:
 │── data/
 │   ├── train/            # Training images
 │   ├── validation/       # Validation images
+│   ├── test/       # Validation images
+
 ```
 
 ## Future Improvements
