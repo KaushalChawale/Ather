@@ -1,4 +1,4 @@
-````markdown
+
 # Ather Scooter Classifier
 
 ## Overview
@@ -30,7 +30,7 @@ This project is a **machine learning-based image classifier** that identifies wh
 git clone https://github.com/KaushalChawale/Ather.git
 cd Ather
 ```
-````
+
 
 ### 2. Install Dependencies
 
