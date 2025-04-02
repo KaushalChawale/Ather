@@ -1,3 +1,5 @@
+# Uses model.pkl
+
 # ✅ 1. Import necessary libraries
 import streamlit as st
 from PIL import Image
