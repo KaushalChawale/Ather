@@ -44,6 +44,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+### 4. Run the Streamlit App (Optimized Version)
+
+```bash
+streamlit run app1.py
+```
+
 ## Model Training (Optional)
 
 If you want to retrain the model:
@@ -83,7 +89,9 @@ with open('model.pkl', 'wb') as model_file:
 ```
 /ather-scooter-classifier
 │── app.py                # Streamlit app
+│── app1.py               # Streamlit app (Optimized Version) 
 │── model.pkl             # Trained Model
+│── best_image_classifier_model.keras             # Trained Model
 │── requirements.txt      # Dependencies
 │── README.md             # Project Documentation
 │── data/
@@ -92,6 +100,35 @@ with open('model.pkl', 'wb') as model_file:
 │   ├── test/       # Validation images
 
 ```
+
+This document outlines the key strategies implemented for training the image classification model.
+
+## Fine-Tuned ModelInformation:
+
+* **Partial Freezing:** Initially, the base model (MobileNetV2) is partially frozen, and only the newly added top layers are trained. This allows the model to quickly adapt to the specific classification task.
+* **Layer Unfreezing:** Subsequently, a subset of the later layers in the base model is unfrozen. Training continues with a significantly lower learning rate. This fine-tuning process enables the pre-trained model to further refine its learned features to better suit the dataset.
+
+## Callbacks
+
+* **ModelCheckpoint:** This callback is used to save the model with the best validation accuracy during training. This ensures that the optimal model is preserved, rather than simply the final model.
+* **EarlyStopping:** To prevent overfitting and save computational resources, training is stopped automatically if the validation accuracy does not improve over a specified number of epochs.
+* **ReduceLROnPlateau:** If the validation loss plateaus, this callback automatically reduces the learning rate. This can help the model escape local minima and find a better solution.
+
+## Training Parameters
+
+* **Learning Rate:** A standard learning rate is used for the initial training phase. A much smaller learning rate is employed during the fine-tuning stage.
+* **Optimizer:** The Adam optimizer is explicitly defined to provide precise control over the learning rate and other optimization parameters.
+
+## Model Saving
+
+* **Keras Model Saving:** The `model.save()` method from Keras is utilized for model persistence. This method offers improved robustness compared to pickle for saving complex models.
+
+## Evaluation Visualization
+
+* **Training/Validation Plots:** The training and validation accuracy and loss are plotted to visualize the model's learning progress. These plots are crucial for:
+    * Understanding the model's learning dynamics.
+    * Identifying potential issues such as overfitting or underfitting.
+    * Evaluating the effectiveness of the training strategies.
 
 ## Future Improvements
 
@@ -110,4 +147,5 @@ This project is licensed under the MIT License.
 
 ```
 Streamlit url: https://kaushalchawale-ather-app-ywtcvl.streamlit.app/
+Streamlit url (Optimized App): https://kaushalchawale-ather-app-ywtcvl.streamlit.app/
 ```
