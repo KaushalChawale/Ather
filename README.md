@@ -28,7 +28,7 @@ This project is a **machine learning-based image classifier** that identifies wh
 
 ```bash
 git clone https://github.com/KaushalChawale/Ather.git
-cd ather-scooter-classifier
+cd Ather
 ```
 ````
 
