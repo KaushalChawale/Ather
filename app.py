@@ -6,6 +6,7 @@ import tensorflow as tf
 import pickle
 import os
 import cv2 # OpenCV for resizing, as used in the original concepts
+st.set_page_config(page_title="Ather Scooter Classifier", page_icon="🛵")
 
 # ✅ 2. Function to load the trained model (with caching)
 # IMPORTANT: Using pickle for Keras models is generally not recommended.
