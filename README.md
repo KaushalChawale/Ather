@@ -88,16 +88,16 @@ with open('model.pkl', 'wb') as model_file:
 
 ```
 /ather-scooter-classifier
-│── app.py                # Streamlit app
-│── app1.py               # Streamlit app (Optimized Version) 
-│── model.pkl             # Trained Model
+│── app.py                                        # Streamlit app
+│── app1.py                                       # Streamlit app (Optimized Version) 
+│── model.pkl                                     # Trained Model
 │── best_image_classifier_model.keras             # Trained Model
-│── requirements.txt      # Dependencies
-│── README.md             # Project Documentation
+│── requirements.txt                              # Dependencies
+│── README.md                                     # Project Documentation
 │── data/
-│   ├── train/            # Training images
-│   ├── validation/       # Validation images
-│   ├── test/       # Validation images
+│   ├── train/                                    # Training images
+│   ├── validation/                               # Validation images
+│   ├── test/                                     # Validation images
 
 ```
 
